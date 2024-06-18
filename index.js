@@ -38,3 +38,13 @@ app.use("/quanAo",quanAoRoute);
 app.listen(process.env.PORT, () => {
     console.log("Server is running");
 });
+
+module.exports = (req, res) => {
+  try {
+    // Your logic here
+    res.status(200).send('Hello World!');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+};
