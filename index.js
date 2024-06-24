@@ -10,23 +10,23 @@ app.use(bodyParser.json({limit:"50mb"})); //chuyển sang dang json
 app.use(cors());
 app.use(morgan("common"));  // thông báo 
 
-async function ConnectDB() {
-  try {
-    await mongoose.connect("mongodb+srv://admin:admin123@maincluster.d4oxxog.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("DB is connected");
-  } catch (err) {
-    console.log("Lỗi kết nối CSDL", err);
-  }
-}
-ConnectDB();
+// async function ConnectDB() {
+//   try {
+//     await mongoose.connect("mongodb+srv://admin:admin123@maincluster.d4oxxog.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster", {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     });
+//     console.log("DB is connected");
+//   } catch (err) {
+//     console.log("Lỗi kết nối CSDL", err);
+//   }
+// }
+// ConnectDB();
 
-// Routes
-app.use("/phanLoai",phanLoaiRoute);
-app.use("/plHoatDong",plHoatDongRoute);
-app.use("/quanAo",quanAoRoute);
+// // Routes
+// app.use("/phanLoai",phanLoaiRoute);
+// app.use("/plHoatDong",plHoatDongRoute);
+// app.use("/quanAo",quanAoRoute);
 
 
 
