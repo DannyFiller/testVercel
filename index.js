@@ -34,17 +34,12 @@ app.use("/phanLoai",phanLoaiRoute);
 app.use("/plHoatDong",plHoatDongRoute);
 app.use("/quanAo",quanAoRoute);
 
+app.get("/",(req,res) => {
+  res.status(200).json("hello");
+});
+
 //
-app.listen(process.env.PORT, () => {
+app.listen(2000, () => {
     console.log("Server is running");
 });
 
-module.exports = (req, res) => {
-  try {
-    // Your logic here
-    res.status(200).send('Hello World!');
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  }
-};

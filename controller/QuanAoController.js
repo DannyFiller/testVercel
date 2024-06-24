@@ -40,6 +40,15 @@ const QuanAoController ={
         }catch(err){
             res.status(500).json(err);
         }
+    },
+
+    deleteAllCloneQuanAo:async(req,res) =>{
+        try{
+            const quanAoDel = await QuanAo.deleteMany({Gia: req.params.gia});
+            res.status(200).json(quanAoDel);
+        }catch(err){
+            res.status(500).json(err);
+        }
     }
 
     
