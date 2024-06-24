@@ -33,12 +33,10 @@ app.use(morgan("common"));  // thông báo
 // app.use("/plHoatDong",plHoatDongRoute);
 // app.use("/quanAo",quanAoRoute);
 
+app.listen(9000, () => {
+  console.log("Server is running");
+});
+
 app.get("/",(req,res) => {
-  res.status(200).json("hello");
+res.status(200).json("hello");
 });
-
-//
-app.listen(2000, () => {
-    console.log("Server is running");
-});
-
