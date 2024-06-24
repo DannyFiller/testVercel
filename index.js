@@ -15,10 +15,9 @@ app.use(bodyParser.json({limit:"50mb"})); //chuyển sang dang json
 app.use(cors());
 app.use(morgan("common"));  // thông báo 
 
-dotenv.config(); // có dòng này mới chạy dc process.env
 async function ConnectDB() {
     try {
-      await mongoose.connect(process.env.MONGODB_URL, {
+      await mongoose.connect("mongodb+srv://admin:admin123@maincluster.d4oxxog.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
