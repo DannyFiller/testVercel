@@ -23,10 +23,10 @@ app.use(morgan("common"));  // thông báo
 // }
 // ConnectDB();
 
-// // Routes
-// app.use("/phanLoai",phanLoaiRoute);
-// app.use("/plHoatDong",plHoatDongRoute);
-// app.use("/quanAo",quanAoRoute);
+// Routes
+app.use("/phanLoai",phanLoaiRoute);
+app.use("/plHoatDong",plHoatDongRoute);
+app.use("/quanAo",quanAoRoute);
 
 
 
