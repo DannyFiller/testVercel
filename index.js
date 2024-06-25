@@ -14,8 +14,10 @@ const quanAoRoute = require("./router/QuanAo");
 app.use(bodyParser.json({limit:"50mb"})); //chuyển sang dang json
 app.use(cors());
 app.use(morgan("common"));  // thông báo 
-dotenv.config();
 
+
+
+dotenv.config();
 async function ConnectDB() {
     try {
       await mongoose.connect(process.env.MONGODB_URL, {
