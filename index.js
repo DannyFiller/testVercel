@@ -32,9 +32,9 @@ dotenv.config();
 // ConnectDB();
 
 // Routes
-app.use("/phanLoai",phanLoaiRoute);
-app.use("/plHoatDong",plHoatDongRoute);
-app.use("/quanAo",quanAoRoute);
+// app.use("/phanLoai",phanLoaiRoute);
+// app.use("/plHoatDong",plHoatDongRoute);
+// app.use("/quanAo",quanAoRoute);
 
 app.get("/",(req,res) => {
   res.status(200).json("hello");
