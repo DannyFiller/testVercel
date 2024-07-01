@@ -18,18 +18,18 @@ app.use(morgan("common"));  // thông báo
 
 
 dotenv.config();
-async function ConnectDB() {
-    try {
-      await mongoose.connect(process.env.MONGODB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-      console.log("DB is connected");
-    } catch (err) {
-      console.log("Lỗi kết nối CSDL", err);
-    }
-  }
-ConnectDB();
+// async function ConnectDB() {
+//     try {
+//       await mongoose.connect(process.env.MONGODB_URL, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       });
+//       console.log("DB is connected");
+//     } catch (err) {
+//       console.log("Lỗi kết nối CSDL", err);
+//     }
+//   }
+// ConnectDB();
 
 // Routes
 app.use("/phanLoai",phanLoaiRoute);
