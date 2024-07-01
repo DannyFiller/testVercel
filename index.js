@@ -6,9 +6,9 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 //
-const phanLoaiRoute = require("./router/phanLoai");
-const plHoatDongRoute = require("./router/PLHoatDong");
-const quanAoRoute = require("./router/QuanAo");
+// const phanLoaiRoute = require("./router/phanLoai");
+// const plHoatDongRoute = require("./router/PLHoatDong");
+// const quanAoRoute = require("./router/QuanAo");
 
 //
 app.use(bodyParser.json({limit:"50mb"})); //chuyển sang dang json
