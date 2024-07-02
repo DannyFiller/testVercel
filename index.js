@@ -2,39 +2,44 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-//
-// const phanLoaiRoute = require("./router/phanLoai");
+
+
+const phanLoaiRoute = require("./router/phanLoai");
 // const plHoatDongRoute = require("./router/PLHoatDong");
 // const quanAoRoute = require("./router/QuanAo");
 
-//
-app.use(bodyParser.json({limit:"50mb"})); //chuyển sang dang json
-app.use(cors());
-app.use(morgan("common"));  // thông báo 
 
 
 
 dotenv.config();
-// async function ConnectDB() {
-//     try {
-//       await mongoose.connect(process.env.MONGODB_URL, {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true,
-//       });
-//       console.log("DB is connected");
-//     } catch (err) {
-//       console.log("Lỗi kết nối CSDL", err);
-//     }
-//   }
-// ConnectDB();
+// Kết nối CSDL
+async function ConnectDB() {
+  try {
+    await mongoose.connect(process.env.MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("DB is connected");
+  } catch (err) {
+    console.log("Lỗi kết nối CSDL", err);
+  }
+}
+ConnectDB();
+
+app.use(bodyParser.json({limit:"50mb"})); 
+app.use(cors());
+app.use(morgan("common"));
 
 // Routes
-// app.use("/phanLoai",phanLoaiRoute);
+app.use("/PhanLoai",phanLoaiRoute);
 // app.use("/plHoatDong",plHoatDongRoute);
 // app.use("/quanAo",quanAoRoute);
+
+
+app.use("/Xe", xeRoutes);
 
 app.get("/",(req,res) => {
   res.status(200).json("hello");
@@ -42,6 +47,5 @@ app.get("/",(req,res) => {
 
 //
 app.listen(process.env.PORT, () => {
-    console.log("Server is running");
+  console.log("Server is running");
 });
-
