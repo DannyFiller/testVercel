@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 
-const phanLoaiRoute = require("./router/phanLoai");
+const PhanLoai = require("./router/PhanLoai");
 // const plHoatDongRoute = require("./router/PLHoatDong");
 // const quanAoRoute = require("./router/QuanAo");
 
@@ -34,12 +34,10 @@ app.use(cors());
 app.use(morgan("common"));
 
 // Routes
-app.use("/PhanLoai",phanLoaiRoute);
+app.use("/phanLoai",PhanLoai);
 // app.use("/plHoatDong",plHoatDongRoute);
 // app.use("/quanAo",quanAoRoute);
 
-
-app.use("/Xe", xeRoutes);
 
 app.get("/",(req,res) => {
   res.status(200).json("hello");
