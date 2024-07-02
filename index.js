@@ -8,8 +8,8 @@ const dotenv = require("dotenv");
 
 
 const PhanLoai = require("./router/PhanLoai");
-// const plHoatDongRoute = require("./router/PLHoatDong");
-// const quanAoRoute = require("./router/QuanAo");
+const plHoatDongRoute = require("./router/PLHoatDong");
+const quanAoRoute = require("./router/QuanAo");
 
 
 
@@ -35,8 +35,8 @@ app.use(morgan("common"));
 
 // Routes
 app.use("/phanLoai",PhanLoai);
-// app.use("/plHoatDong",plHoatDongRoute);
-// app.use("/quanAo",quanAoRoute);
+app.use("/plHoatDong",plHoatDongRoute);
+app.use("/quanAo",quanAoRoute);
 
 
 app.get("/",(req,res) => {
